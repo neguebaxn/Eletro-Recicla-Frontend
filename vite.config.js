@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Eletro-Recicla-Frontend/',
   plugins: [react()],
   server: {
     port: 5173,
@@ -15,4 +16,5 @@ export default defineConfig({
     },
   },
 })
+
 
