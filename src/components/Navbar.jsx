@@ -1,12 +1,16 @@
 import React from 'react';
-import { Leaf } from 'lucide-react';
+import { Leaf, User } from 'lucide-react';
 import './Navbar.css';
 
-export default function Navbar({ onNavigate, currentPage }) {
+export default function Navbar({ onNavigate, currentPage, currentUser, onLogout }) {
+  const primeiroNome = currentUser?.usuario?.nome?.split(' ')[0] || 'Minha conta';
   return (
     <header className="navbar-container">
       <div className="navbar-inner">
-        <div className="navbar-brand" onClick={() => onNavigate('login')}>
+        <div
+          className="navbar-brand"
+          onClick={() => onNavigate(currentUser ? 'painel' : 'login')}
+        >
           <div className="brand-icon">
             <Leaf size={20} className="leaf-svg" />
           </div>
@@ -25,31 +29,49 @@ export default function Navbar({ onNavigate, currentPage }) {
         </nav>
 
         <div className="navbar-actions">
-          {currentPage !== 'login' ? (
-            <button
-              type="button"
-              className="btn-text"
-              onClick={() => onNavigate('login')}
-            >
-              Entrar
-            </button>
+          {currentUser ? (
+            <div className="navbar-user">
+              <button
+                type="button"
+                className="user-chip"
+                onClick={() => onNavigate('painel')}
+              >
+                <User size={15} />
+                <span>{primeiroNome}</span>
+              </button>
+              <button type="button" className="btn-text" onClick={onLogout}>
+                Sair
+              </button>
+            </div>
           ) : (
-            <button
-              type="button"
-              className="btn-text"
-              onClick={() => onNavigate('cadastro')}
-            >
-              Cadastre-se
-            </button>
-          )}
+            <>
+              {currentPage !== 'login' ? (
+                <button
+                  type="button"
+                  className="btn-text"
+                  onClick={() => onNavigate('login')}
+                >
+                  Entrar
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn-text"
+                  onClick={() => onNavigate('cadastro')}
+                >
+                  Cadastre-se
+                </button>
+              )}
 
-          <button
-            type="button"
-            className="btn-primary-dark"
-            onClick={() => onNavigate('cadastro')}
-          >
-            Descarte Agora
-          </button>
+              <button
+                type="button"
+                className="btn-primary-dark"
+                onClick={() => onNavigate('cadastro')}
+              >
+                Descarte Agora
+              </button>
+            </>
+          )}
         </div>
       </div>
     </header>

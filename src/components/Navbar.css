@@ -115,6 +115,31 @@
   transform: translateY(-1px);
 }
 
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #eef6f1;
+  color: #162a22;
+  border: 1px solid #d7e8de;
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-chip:hover {
+  background-color: #e2f1e9;
+}
+
 @media (max-width: 868px) {
   .navbar-menu {
     display: none;

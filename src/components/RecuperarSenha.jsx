@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lock, Mail, ArrowLeft, CheckCircle2 } from 'lucide-react';
+import { Lock, ArrowLeft, CheckCircle2 } from 'lucide-react';
 import './RecuperarSenha.css';
 
 export default function RecuperarSenha({ onNavigate }) {
