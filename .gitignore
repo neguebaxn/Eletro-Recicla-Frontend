@@ -29,3 +29,7 @@ eletrorecicla_semana1_corrigido/
 EletroRecicladoc/
 resized_*.jpg
 
+# Backend local extraido (o backend oficial esta no Render)
+backend_eletro-master/
+test_out.txt
+

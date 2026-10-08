@@ -120,11 +120,11 @@ export default function Cadastro({ onNavigate }) {
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="cpf">CPF</label>
-              <input id="cpf" type="text" placeholder="123.456.789-00" value={cpf} onChange={handleCpfChange} required />
+              <input id="cpf" type="text" placeholder="123.456.789-00" value={cpf} onChange={handleCpfChange} />
             </div>
             <div className="form-group">
               <label htmlFor="celular">Celular</label>
-              <input id="celular" type="text" placeholder="(11) 98765-4321" value={celular} onChange={handleCelularChange} required />
+              <input id="celular" type="text" placeholder="(11) 98765-4321" value={celular} onChange={handleCelularChange} />
             </div>
           </div>
 
